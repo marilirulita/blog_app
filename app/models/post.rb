@@ -5,7 +5,7 @@ class Post < ApplicationRecord
 
   # A method that updates the posts counter for a user.
   def self.update_post_counter(user)
-    User.find(user.id).increment!(:posts_counter)
+    user.increment!(:posts_counter)
   end
 
   # A method which returns the 5 most recent comments for a given post.
