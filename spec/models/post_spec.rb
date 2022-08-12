@@ -13,7 +13,9 @@ RSpec.describe Post, type: :model do
   end
 
   it 'Title must not exceed 250 characters.' do
+    # rubocop:disable Layout/LineLength
     subject.title = 'this is a veryyy long text thet could exceed the 250 characters long so I will keep writting until I get bigger text that only 250 charactersssss: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut nec nisl sed est lobortis eleifend eu quis purus. Integer pulvinar lectus in eros tempus, at convallis lorem pharetra.'
+    # rubocop:enable Layout/LineLength
     expect(subject).to_not be_valid
   end
 
