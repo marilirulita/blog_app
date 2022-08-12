@@ -32,7 +32,6 @@ RSpec.describe User, type: :model do
 
   it "PostsCounter must be an integer greater than or equal to zero." do
     subject.posts_counter = 2
-    p subject
     expect(subject).to be_valid
   end
 
