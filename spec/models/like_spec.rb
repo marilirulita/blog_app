@@ -5,14 +5,13 @@ RSpec.describe Like, type: :model do
 
   before { subject.save }
 
-  it "post id should be present" do
+  it 'post id should be present' do
     subject.post_id = nil
     expect(subject).to_not be_valid
   end
 
-  it "author id should be present" do
+  it 'author id should be present' do
     subject.author_id = nil
     expect(subject).to_not be_valid
   end
-
 end
