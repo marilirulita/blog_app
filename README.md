@@ -1,24 +1,71 @@
-# README
+![](https://img.shields.io/badge/Microverse-orangered)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Blog App
+> The Blog app is a classic example of a blog website. This project is a rails app that allows you to create a fully functional website that shows the list of posts for a given user and empowers readers to interact with them by adding comments and liking posts.
 
-Things you may want to cover:
+## Built With
+- Ruby
+- Rails
+- SQL
 
-* Ruby version
+# Getting Started
 
-* System dependencies
+To get a local copy up and running follow these simple example steps.
 
-* Configuration
+- Run this command in your OS terminal to get a copy of the project:
 
-* Database creation
+  ```
+  git clone git@github.com:marilirulita/blog_app.git
+  ```
 
-* Database initialization
+- Open the folder project from your code editor using:
 
-* How to run the test suite
+  ```
+  cd blog_app
+  ```
 
-* Services (job queues, cache servers, search engines, etc.)
+- Run the following command:
 
-* Deployment instructions
+  ```
+  rails server
+  ```
 
-* ...
+- To see your application in action, open a browser window and navigate to http://localhost:3000.
+
+
+### Prerequisites
+
+- Visual Studio Code
+- Ruby
+- SQLite3
+- Node
+- Yarn
+- PostgreSQL
+
+
+## Authors
+
+👤 **Mar Bautista**
+
+- GitHub: [marilirulita](https://github.com/marilirulita)
+- LinkedIn: [mar bautista](https://www.linkedin.com/in/marbautista/)
+- Twitter: [@marylirulita](https://twitter.com/marylirulita)
+
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](../../issues/).
+
+ ## Show your support
+
+ Give a ⭐️ if you like this project!
+
+ ## Acknowledgments
+
+ - Microverse: [microverse community](https://github.com/microverseinc)
+
+ ## 📝 License
+
+ This project is [MIT](./MIT.md) licensed.
