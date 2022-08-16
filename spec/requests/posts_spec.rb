@@ -11,6 +11,10 @@ RSpec.describe 'Posts', type: :request do
     it 'renders index template' do
       expect(response).to render_template('index') 
     end
+
+    it 'response body includes correct placeholder text' do
+      expect(response.body).to include('Here is a list of all posts for a given user') 
+    end
   end
 
   describe 'GET /show' do
@@ -23,11 +27,9 @@ RSpec.describe 'Posts', type: :request do
     it 'renders show template' do
       expect(response).to render_template('show') 
     end
+
+    it 'response body includes correct placeholder text' do
+      expect(response.body).to include('Here is all details for a certain posts for a given user') 
+    end
   end
 end
-
-# If response status was correct.
-# If a correct template was rendered.
-
-#expect(response).to redirect_to(path) 
-# If the response body includes correct placeholder text.
