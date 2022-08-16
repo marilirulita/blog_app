@@ -9,11 +9,11 @@ RSpec.describe 'Users', type: :request do
     end
 
     it 'renders index template' do
-      expect(response).to render_template('index') 
+      expect(response).to render_template('index')
     end
 
     it 'response body includes correct placeholder text' do
-      expect(response.body).to include('Here is a list of users') 
+      expect(response.body).to include('Here is a list of users')
     end
   end
 
@@ -25,11 +25,11 @@ RSpec.describe 'Users', type: :request do
     end
 
     it 'renders show template' do
-      expect(response).to render_template('show') 
+      expect(response).to render_template('show')
     end
 
     it 'response body includes correct placeholder text' do
-      expect(response.body).to include('Here is all details for given user') 
+      expect(response.body).to include('Here is all details for given user')
     end
   end
 end
