@@ -13,3 +13,33 @@
  *= require_tree .
  *= require_self
  */
+.user_element {
+  display: flex;
+  padding: 15px 25px;
+}
+
+.user_img {
+  width: fit-content;
+  border: 1px solid black;
+  margin-right: 15px;
+}
+
+.user_name {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex: 3;
+  margin: 15px;
+  border: 1px solid black;
+  padding: 15px;
+}
+
+.user_name h2 {
+  margin: 0;
+  font-size: 4rem;
+}
+
+.user_name p {
+  margin: 0;
+  align-self: flex-end;
+}
