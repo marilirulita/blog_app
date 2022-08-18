@@ -1,2 +1,18 @@
-<h1>Here is all details for given user</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<%= render "user_show" %>
+
+<div class='user_bio'><h3>Bio</h3><p><%= @user.bio %></p></div>
+
+<div>
+<% @posts.each do |post| %>
+  <div class='post_container'>
+  <div class='post_element'>
+   <h3><%= link_to post.title, user_post_path(@user, post) %></h3>
+   <p><%= post.text%></p>
+   <span>Comments: <%= post.comments_counter%>, Likes: <%= post.likes_counter%></span>
+   </div>
+   </div>
+<% end %>
+</div>
+
+<div class='button_all'><%= link_to "See All Posts", user_posts_path(@user) %></div>
+
