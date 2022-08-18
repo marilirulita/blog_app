@@ -62,12 +62,16 @@ h3 {
   margin: 1rem 0;
 }
 
+.post_container {
+  margin-bottom: 1rem;
+}
+
 .post_element {
   display: flex;
   flex-direction: column;
   border: 1px solid black;
-  margin-bottom: 1rem;
   padding: 1rem;
+  margin-bottom: 0.1rem;
 }
 
 .post_element span {
@@ -86,4 +90,13 @@ h3 {
   padding: 3px 4px;
   text-decoration: none;
   color: black
+}
+
+.comment_element {
+  border: 1px solid black;
+  padding: 1rem;
+}
+
+.comment_element p {
+  margin: 0;
 }
