@@ -8,10 +8,12 @@
 
 <div>
 <% @posts.each do |post| %>
+  <div class='post_container'>
   <div class='post_element'>
    <h3><%= post.title %></h3>
    <p><%= post.text%></p>
    <span>Comments: <%= post.comments_counter%>, Likes: <%= post.likes_counter%></span>
+   </div>
    </div>
 <% end %>
 </div>

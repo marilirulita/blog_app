@@ -78,6 +78,11 @@ h3 {
   align-self: flex-end;
 }
 
+.post_header {
+  display: flex;
+  justify-content: space-between;
+}
+
 .button_all {
   display: flex;
   justify-content: center;
