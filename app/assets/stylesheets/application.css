@@ -15,7 +15,7 @@
  */
 a {
   text-decoration: none;
-  color: black
+  color: black;
 }
 
 .content {
@@ -94,12 +94,12 @@ h3 {
 }
 
 .button_all a {
-  box-shadow: 4px 4px rgba(0,0,0,0.9);
+  box-shadow: 4px 4px rgba(0, 0, 0, 0.9);
   border: 1px solid black;
   border-radius: 3px;
   padding: 3px 4px;
   text-decoration: none;
-  color: black
+  color: black;
 }
 
 .comment_element {
