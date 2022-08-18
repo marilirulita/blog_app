@@ -1,14 +1,11 @@
-
-
   <div class='post_element'>
   <div class='post_header'>
   <h3><%= @post.title %> by <%= User.find(@post.author_id).name %></h3>
   <span>Comments: <%= @post.comments_counter%>, Likes: <%= @post.likes_counter%></span>
   </div>
-   
    <p><%= @post.text%></p>
-   
    </div>
+
    <div class='comment_element'>
    <% @post.comments.each do |comment| %>
     <p><strong><%= User.find(comment.author_id).name%>:</strong> <%= comment.text%></p>
