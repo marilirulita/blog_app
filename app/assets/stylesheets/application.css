@@ -90,7 +90,7 @@ h3 {
 
 .button_all {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
 }
 
 .button_all a {
