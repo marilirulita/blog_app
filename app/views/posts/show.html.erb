@@ -7,7 +7,7 @@
    </div>
 
    <div class='comment_element'>
-   <% @post.comments.each do |comment| %>
+   <% @comments.each do |comment| %>
     <p><strong><%= comment.author.name%>:</strong> <%= comment.text%></p>
     <% end %>
    </div>
