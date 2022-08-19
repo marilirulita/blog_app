@@ -6,7 +6,7 @@
 <% @posts.each do |post| %>
   <div class='post_container'>
   <div class='post_element'>
-   <h3><%= link_to post.title, user_post_path(@user, post) %></h3>
+   <h3><%= link_to post.title, [post.author, post] %></h3>
    <p><%= post.text%></p>
    <span>Comments: <%= post.comments_counter%>, Likes: <%= post.likes_counter%></span>
    </div>
