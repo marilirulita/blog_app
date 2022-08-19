@@ -29,6 +29,7 @@ class PostsController < ApplicationController
   end
 
   private
+  
   def post_params
     params.require(:post).permit(:title, :text, :author_id, :comments_counter, :likes_counter)
   end
