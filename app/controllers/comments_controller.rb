@@ -2,6 +2,7 @@ class CommentsController < ApplicationController
   def new
     @current_user = current_user
     @comment = Comment.new
+    @post_id = params[:post_id]
   end
 
   def create
