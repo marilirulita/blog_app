@@ -4,7 +4,10 @@
   <h3><%= @post.title %> by <%= User.find(@post.author_id).name %></h3>
   <span>Comments: <%= @post.comments_counter%>, Likes: <%= @post.likes_counter%></span>
   </div>
+  <div class='post_header'>
    <p><%= @post.text%></p>
+   <%= render 'form' %>
+   </div>
    </div>
 
    <div class='comment_element'>
@@ -12,8 +15,9 @@
     <p><strong><%= comment.author.name%>:</strong> <%= comment.text%></p>
     <% end %>
    </div>
+
+   <%= render 'comment_form' %>
+
    </div>
 
-   <div class='button_all'>
-   <%= render 'form' %>
- <%= link_to 'New Comment', new_user_comment_path(post_id: @post.id)%><%= link_to "Paginations", users_path %></div>
+   <div class='button_all'><%= link_to "Paginations", users_path %></div>
