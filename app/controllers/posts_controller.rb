@@ -6,6 +6,7 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+    @current_user = current_user
     @comments = @post.comments.order(created_at: :desc)
   end
 
@@ -29,7 +30,7 @@ class PostsController < ApplicationController
   end
 
   private
-  
+
   def post_params
     params.require(:post).permit(:title, :text, :author_id, :comments_counter, :likes_counter)
   end

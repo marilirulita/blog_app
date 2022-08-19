@@ -90,16 +90,19 @@ h3 {
 
 .button_all {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.button_all a {
+.button_all a,
+input[type=submit] {
   box-shadow: 4px 4px rgba(0, 0, 0, 0.9);
   border: 1px solid black;
   border-radius: 3px;
   padding: 3px 4px;
   text-decoration: none;
   color: black;
+  background-color: white;
 }
 
 .comment_element {

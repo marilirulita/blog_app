@@ -14,4 +14,6 @@
    </div>
    </div>
 
-   <div class='button_all'><%= link_to 'New Comment', new_user_comment_path(post_id: @post.id)%><%= link_to "Paginations", users_path %></div>
+   <div class='button_all'>
+   <%= render 'form' %>
+ <%= link_to 'New Comment', new_user_comment_path(post_id: @post.id)%><%= link_to "Paginations", users_path %></div>
