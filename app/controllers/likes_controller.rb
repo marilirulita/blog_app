@@ -4,11 +4,11 @@ class LikesController < ApplicationController
     @like = @current_user.likes.new(likes_params)
 
     if @like.save
-      flash[:success] = "Like saved successfully"
+      flash[:success] = 'Like saved successfully'
       redirect_to user_post_path(@like.author_id, @like.post_id)
     else
-      flash.now[:error] = "Error: Post could not be saved"
-      render "new"
+      flash.now[:error] = 'Error: Post could not be saved'
+      render 'new'
     end
   end
 
