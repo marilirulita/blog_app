@@ -9,7 +9,7 @@
    <span>Comments: <%= post.comments_counter%>, Likes: <%= post.likes_counter%></span>
    </div>
    <div class='comment_element'>
-   <% Post.recent_comments(post).each do |comment| %>
+   <% post.recent_comments.each do |comment| %>
     <p><strong><%= comment.author.name%>:</strong> <%= comment.text%></p>
     <% end %>
    </div>
@@ -17,4 +17,4 @@
 <% end %>
 </div>
 
-<div class='button_all'><a>Paginations</a></div>
+<div class='button_all'><%= link_to 'New Post', new_user_post_path %><%= link_to "Paginations", users_path %></div>
