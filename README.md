@@ -24,7 +24,21 @@ To get a local copy up and running follow these simple example steps.
   cd blog_app
   ```
 
-- Run the following command:
+- Run the following commands:
+
+  *To install all gems package in your system:*
+
+  ```
+  bundle install
+  ```
+  
+  *To create a database for the project in your system:*
+
+  ```
+  rails db:create
+  ```
+  
+  *To start the project:*
 
   ```
   rails server
