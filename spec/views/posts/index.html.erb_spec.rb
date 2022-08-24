@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe 'posts/index.html.erb', type: :system do
   describe 'index page' do
     subject!(:jhon) { User.where(name: 'Jhon').first }
-    subject!(:post) { Post.where(author_id: jhon.id).first }
+    subject!(:post) { Post.where(author_id: jhon.id).last }
 
     before(:all) do
       driven_by(:selenium_chrome_headless)

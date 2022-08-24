@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe 'posts/show.html.erb', type: :system do
   describe 'show page' do
     subject!(:jhon) { User.where(name: 'Jhon').first }
-    subject!(:post) { Post.where(author_id: jhon.id).first }
+    subject!(:post) { Post.where(author_id: jhon.id).last }
 
     before(:all) do
       driven_by(:selenium_chrome_headless)
@@ -31,7 +31,7 @@ RSpec.describe 'posts/show.html.erb', type: :system do
 
     it 'see the post body' do
       visit user_post_path(jhon.id, post.id)
-      expect(page).to have_content('This is my first post')
+      expect(page).to have_content('This is my fourth post')
     end
 
     it 'see the username of each comment' do
@@ -41,7 +41,7 @@ RSpec.describe 'posts/show.html.erb', type: :system do
 
     it 'see the comment each commentor left' do
       visit user_post_path(jhon.id, post.id)
-      expect(page).to have_content('Hi Tom!')
+      expect(page).to have_content('Hi Steve!')
     end
   end
 end

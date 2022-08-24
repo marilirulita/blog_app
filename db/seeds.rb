@@ -19,5 +19,5 @@ Comment.create(post_id: first_post.id, author_id: second_user.id, text: 'Hi Jenn
 Comment.create(post_id: first_post.id, author_id: second_user.id, text: 'Hi Mike!' )
 Comment.create(post_id: first_post.id, author_id: second_user.id, text: 'Hi Peter!' )
 Comment.create(post_id: first_post.id, author_id: second_user.id, text: 'Hi Luke!' )
-Comment.create(post_id: first_post.id, author_id: second_user.id, text: 'Hi Steve!' )
+Comment.create(post_id: fourth_post.id, author_id: second_user.id, text: 'Hi Steve!' )
 
