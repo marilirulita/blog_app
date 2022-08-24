@@ -21,6 +21,10 @@ end
 Capybara.javascript_driver = :selenium_chrome
 
 RSpec.configure do |config|
+  config.before(:all) do
+    Rails.application.load_seed
+  end
+
   config.before(:suite) do
     DatabaseCleaner.clean_with(:truncation)
   end

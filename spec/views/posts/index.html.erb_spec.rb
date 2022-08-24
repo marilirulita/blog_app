@@ -6,7 +6,6 @@ RSpec.describe 'posts/index.html.erb', type: :system do
     subject!(:post) { Post.where(author_id: jhon.id).first }
 
     before(:all) do
-      Rails.application.load_seed
       driven_by(:selenium_chrome_headless)
     end
 
