@@ -12,12 +12,12 @@ third_user = User.create(name: 'Mike', image: 'https://icon-library.com/images/p
 first_post = Post.create(author_id: first_user.id, title: 'Hello', text: 'This is my first post', comments_counter: 0, likes_counter: 0)
 second_post = Post.create(author_id: first_user.id, title: 'Hello', text: 'This is my second post', comments_counter: 0, likes_counter: 0)
 third_post = Post.create(author_id: first_user.id, title: 'Hello', text: 'This is my third post', comments_counter: 0, likes_counter: 0)
-fourth_post = Post.create(author_id: first_user.id, title: 'Hello', text: 'This is my fourth post', comments_counter: 0, likes_counter: 0)
+fourth_post = Post.create(author_id: first_user.id, title: 'Hello There', text: 'This is my fourth post', comments_counter: 0, likes_counter: 0)
 
 Comment.create(post_id: first_post.id, author_id: second_user.id, text: 'Hi Tom!' )
 Comment.create(post_id: first_post.id, author_id: second_user.id, text: 'Hi Jenny!' )
 Comment.create(post_id: first_post.id, author_id: second_user.id, text: 'Hi Mike!' )
 Comment.create(post_id: first_post.id, author_id: second_user.id, text: 'Hi Peter!' )
 Comment.create(post_id: first_post.id, author_id: second_user.id, text: 'Hi Luke!' )
-Comment.create(post_id: first_post.id, author_id: second_user.id, text: 'Hi Steve!' )
+Comment.create(post_id: fourth_post.id, author_id: second_user.id, text: 'Hi Steve!' )
 
