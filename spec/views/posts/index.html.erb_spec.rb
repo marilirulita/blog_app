@@ -3,6 +3,7 @@ require 'rails_helper'
 RSpec.describe 'posts/index.html.erb', type: :system do
   describe 'index page' do
     subject!(:jhon) { User.where(name: 'Jhon').first }
+    subject!(:post) { Post.where(author_id: jhon.id).first }
 
     before(:all) do
       Rails.application.load_seed
@@ -56,7 +57,7 @@ RSpec.describe 'posts/index.html.erb', type: :system do
 
     it 'when click on post, go to post show page' do
       visit user_posts_path(jhon.id)
-      click_on 'Hello There'
+      click_on post.title
       expect(page).to have_content('Hello There')
     end
   end
