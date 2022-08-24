@@ -2,16 +2,15 @@ require 'rails_helper'
 
 RSpec.describe 'User', type: :system do
   describe 'index page' do
-    before do
-      # rubocop:disable Layout/LineLength
-      @first_user = User.create(name: 'Bob',
-                                image: 'https://icon-library.com/images/person-png-icon/person-png-icon-29.jpg', bio: 'Peruvian Chef.', posts_counter: 0)
-      # rubocop:enable Layout/LineLength
+    subject!(:jhon) { User.where(name: 'Jhon').first }
+
+    before(:all) do
+      driven_by(:selenium_chrome_headless)
     end
 
     it 'shows the right content' do
       visit root_path
-      expect(page).to have_content('Bob')
+      expect(page).to have_content('Jhon')
     end
 
     it 'show profile picture' do
@@ -26,8 +25,8 @@ RSpec.describe 'User', type: :system do
 
     it 'when click on user, redirect to user show page' do
       visit root_path
-      click_on 'Bob'
-      expect(current_path).to eq(user_path(@first_user))
+      click_on 'Jhon'
+      expect(current_path).to eq(user_path(jhon))
     end
   end
 end

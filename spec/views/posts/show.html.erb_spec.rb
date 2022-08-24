@@ -2,16 +2,6 @@ require 'rails_helper'
 
 RSpec.describe 'posts/show.html.erb', type: :system do
   describe 'show page' do
-    # before do
-    #   # rubocop:disable Layout/LineLength
-    #   @first_user = User.create(name: 'Bob',
-    #                             image: 'https://icon-library.com/images/person-png-icon/person-png-icon-29.jpg', bio: 'Peruvian Chef.', posts_counter: 0)
-    #   @first_post = Post.create(author_id: @first_user.id, title: 'Hello', text: 'This is my first post',
-    #                             comments_counter: 0, likes_counter: 0)
-    #   # rubocop:enable Layout/LineLength
-    #   Comment.create(post_id: @first_post.id, author_id: @first_user.id, text: 'Hi Tom!')
-    # end
-
     subject!(:jhon) { User.where(name: 'Jhon').first }
     subject!(:post) { Post.where(author_id: jhon.id).first }
 

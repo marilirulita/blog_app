@@ -9,10 +9,10 @@ first_user = User.create(name: 'Jhon', image: 'https://icon-library.com/images/p
 second_user = User.create(name: 'Jenny', image: 'https://icon-library.com/images/person-png-icon/person-png-icon-29.jpg', bio: 'Teacher from Mexico.', posts_counter: 0)
 third_user = User.create(name: 'Mike', image: 'https://icon-library.com/images/person-png-icon/person-png-icon-29.jpg', bio: 'Teacher from Mexico.', posts_counter: 0)
 
-first_post = Post.create(author_id: first_user.id, title: 'Hello There', text: 'This is my first post', comments_counter: 0, likes_counter: 0)
+first_post = Post.create(author_id: first_user.id, title: 'Hello', text: 'This is my first post', comments_counter: 0, likes_counter: 0)
 second_post = Post.create(author_id: first_user.id, title: 'Hello', text: 'This is my second post', comments_counter: 0, likes_counter: 0)
 third_post = Post.create(author_id: first_user.id, title: 'Hello', text: 'This is my third post', comments_counter: 0, likes_counter: 0)
-fourth_post = Post.create(author_id: first_user.id, title: 'Hello', text: 'This is my fourth post', comments_counter: 0, likes_counter: 0)
+fourth_post = Post.create(author_id: first_user.id, title: 'Hello There', text: 'This is my fourth post', comments_counter: 0, likes_counter: 0)
 
 Comment.create(post_id: first_post.id, author_id: second_user.id, text: 'Hi Tom!' )
 Comment.create(post_id: first_post.id, author_id: second_user.id, text: 'Hi Jenny!' )
