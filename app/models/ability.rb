@@ -5,13 +5,13 @@ class Ability
 
   def initialize(user)
     can :read, Post, public: true
+    can :manage, Post, author_id: user.id
+    can :manage, Comment, author_id: user.id
     # Define abilities for the user here. For example:
-    #
       return unless user.present?
       can :read, :all
       return unless user.is? :admin
       can :manage, :all
-    #
     # The first argument to `can` is the action you are giving the user
     # permission to do.
     # If you pass :manage it will apply to every action. Other common actions
