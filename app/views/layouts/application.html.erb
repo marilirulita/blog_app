@@ -11,14 +11,15 @@
   </head>
 
   <body>
-    <div class='content'>
+   
     <% flash.each do |name, msg| -%>
       <%= content_tag :div, msg, class: name %>
     <% end -%>
 
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-    
+     
+    <div class='content'>
     <%= yield %>
     </div>
   </body>

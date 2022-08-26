@@ -28,3 +28,7 @@
    <% if cannot? :destroy, @post %>
     <span class="permission-message">You aren't allowed to delete this post.</span>
   <% end %>
+
+  <% if can? :destroy, @post %>
+  <%= link_to "Delete", @post %>
+<% end %>
