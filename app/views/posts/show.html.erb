@@ -1,23 +1,39 @@
   <div class='post_container'>
-  <div class='post_element'>
-  <div class='post_header'>
-  <h3><%= @post.title %> by <%= User.find(@post.author_id).name %></h3>
-  <span>Comments: <%= @post.comments_counter%>, Likes: <%= @post.likes_counter%></span>
-  </div>
-  <div class='post_header'>
-   <p><%= @post.text%></p>
-   <%= render 'form' %>
-   </div>
-   </div>
+    <div class='post_element'>
+      <div class='post_header'>
+        <h3><%= @post.title %> by <%= User.find(@post.author_id).name %></h3>
+        <span>Comments: <%= @post.comments_counter %>, Likes: <%= @post.likes_counter %></span>
+      </div>
+      <div class='post_header'>
+        <p><%= @post.text %></p>
+        <%= render "form" %>
+      </div>
+    </div>
 
-   <div class='comment_element'>
-   <% @comments.each do |comment| %>
-    <p><strong><%= comment.author.name%>:</strong> <%= comment.text%></p>
-    <% end %>
-   </div>
+    <div class='comment_element'>
+      <% @comments.each do |comment| %>
+      <div class="comment_item">  
+        <p><strong><%= comment.author.name %>:</strong> <%= comment.text %></p>
+        <% if can? :destroy, comment %>
+        <div class='comment_delete'>
+          <%= link_to "Destroy Comment", [comment.author, comment], data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+        </div>
+        <% end %>
+      </div>
+      <% end %>
+    </div>
 
-   <%= render 'comment_form' %>
+  <% if can? :destroy, @post %>
+    <div class='button_delete'>
+      <%= link_to "Delete Post", user_post_path(@current_user, @post), data: { turbo_method: :delete, turbo_confirm: "Are you sure" } %>
+    </div>
+  <% end %>
 
-   </div>
+  <% if cannot? :destroy, @post %>
+    <span class="permission-message">You aren't allowed to delete this post.</span>
+  <% end %>
 
-   <div class='button_all'><%= link_to "Paginations", users_path %></div>
+  <%= render "comment_form" %>
+
+  <div class='button_all'><%= link_to "Paginations", users_path %></div>
+

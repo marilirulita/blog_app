@@ -11,9 +11,16 @@ class User < ApplicationRecord
   validates :image, presence: true
   validates :bio, presence: true
   validates :posts_counter, comparison: { greater_than_or_equal_to: 0 }
+  validates :role, presence: true
 
   # A method that returns the 3 most recent posts for a given user.
   def recent_posts
     posts.limit(3).order(created_at: :desc)
+  end
+
+  ROLES = %i[admin default].freeze
+
+  def is?(requested_role)
+    role == requested_role.to_s
   end
 end

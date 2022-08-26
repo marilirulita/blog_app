@@ -1,3 +1,4 @@
+<div class='log_forms'>
 <h2>Sign up</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
@@ -31,6 +32,11 @@
     <%= f.text_area :bio, size: "60x5", placeholder: "Your biography" %>
   </div>
 
+   <div class="field inputs_data">
+    <%= f.label :role, "Select a role" %>
+    <%= f.select :role, ["admin", "default"] %>
+  </div>
+
   <%= f.hidden_field :posts_counter, value: 0 %>
 
   <div class="actions">
@@ -40,4 +46,6 @@
 
 <div class="form_devise">
 <%= render "devise/shared/links" %>
+</div>
+
 </div>

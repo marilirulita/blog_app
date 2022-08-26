@@ -11,6 +11,13 @@ class CommentsController < ApplicationController
     end
   end
 
+  def destroy
+    @user = User.find(params[:user_id])
+    @comment = @user.comments.find(params[:id])
+    @comment.destroy
+    redirect_to user_post_path(@user.id, @comment.post_id), status: 303
+  end
+
   private
 
   def comment_params
