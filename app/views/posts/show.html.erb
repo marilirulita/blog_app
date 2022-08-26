@@ -11,7 +11,10 @@
    </div>
 
    <div class='comment_element'>
-   <% @comments.each do |comment| %>
+   <% @comments.each do |comment| %>  
+   <% if cannot? :destroy, @comment %>
+    <span class="permission-message">You aren't allowed to delete this comment.</span>
+   <% end %>
     <p><strong><%= comment.author.name %>:</strong> <%= comment.text %></p>
     <% end %>
    </div>
