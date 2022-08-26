@@ -98,6 +98,7 @@ h3 {
 }
 
 .button_all a,
+.button_delete a,
 input[type=submit] {
   box-shadow: 4px 4px rgba(0, 0, 0, 0.9);
   border: 1px solid black;
@@ -108,13 +109,25 @@ input[type=submit] {
   background-color: white;
 }
 
+.comment_delete a {
+  text-decoration: solid;
+  text-decoration-line: underline;
+  color: darkslategrey;
+}
+
 .comment_element {
   border: 1px solid black;
   padding: 1rem;
+  margin-bottom: 1rem;
 }
 
 .comment_element p {
   margin: 0;
+}
+
+.comment_item {
+  display: flex;
+  justify-content: space-between;
 }
 
 .form_devise {
