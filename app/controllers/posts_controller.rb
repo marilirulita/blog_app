@@ -30,6 +30,18 @@ class PostsController < ApplicationController
     end
   end
 
+  def destroy
+    @post = Post.find(params[:id])
+    @comments = @post.comments.all
+    if @comments.length <1
+      @post.destroy
+     redirect_to user_posts_path
+    else
+      flash.now[:error] = 'Error: You cannot delete a post with comments'
+    end
+   
+  end
+
   private
 
   def post_params

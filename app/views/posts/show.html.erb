@@ -12,10 +12,10 @@
 
    <div class='comment_element'>
    <% @comments.each do |comment| %>  
-   <% if cannot? :destroy, @comment %>
-    <span class="permission-message">You aren't allowed to delete this comment.</span>
-   <% end %>
     <p><strong><%= comment.author.name %>:</strong> <%= comment.text %></p>
+    <% if can? :destroy, comment %>
+      <%= link_to "Destroy Comment", [comment.author, comment], data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+  <% end %>
     <% end %>
    </div>
 
@@ -30,5 +30,5 @@
   <% end %>
 
   <% if can? :destroy, @post %>
-  <%= link_to "Delete", @post %>
-<% end %>
+    <%= link_to "Destroy", user_post_path(@current_user, @post), data: { turbo_method: :delete, turbo_confirm: "Are you sure" } %>
+  <% end %>
