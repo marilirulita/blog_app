@@ -2,22 +2,26 @@
   <div class='post_element'>
   <div class='post_header'>
   <h3><%= @post.title %> by <%= User.find(@post.author_id).name %></h3>
-  <span>Comments: <%= @post.comments_counter%>, Likes: <%= @post.likes_counter%></span>
+  <span>Comments: <%= @post.comments_counter %>, Likes: <%= @post.likes_counter %></span>
   </div>
   <div class='post_header'>
-   <p><%= @post.text%></p>
-   <%= render 'form' %>
+   <p><%= @post.text %></p>
+   <%= render "form" %>
    </div>
    </div>
 
    <div class='comment_element'>
    <% @comments.each do |comment| %>
-    <p><strong><%= comment.author.name%>:</strong> <%= comment.text%></p>
+    <p><strong><%= comment.author.name %>:</strong> <%= comment.text %></p>
     <% end %>
    </div>
 
-   <%= render 'comment_form' %>
+   <%= render "comment_form" %>
 
    </div>
 
    <div class='button_all'><%= link_to "Paginations", users_path %></div>
+
+   <% if cannot? :destroy, @post %>
+    <span class="permission-message">You aren't allowed to delete this post.</span>
+  <% end %>
