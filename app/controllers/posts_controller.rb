@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   load_and_authorize_resource
-  
+
   def index
     @user = User.find(params[:user_id])
     @posts = @user.posts.order(created_at: :desc)
@@ -33,13 +33,12 @@ class PostsController < ApplicationController
   def destroy
     @post = Post.find(params[:id])
     @comments = @post.comments.all
-    if @comments.length <1
+    if @comments.empty?
       @post.destroy
-     redirect_to user_posts_path
+      redirect_to user_posts_path
     else
       flash.now[:error] = 'Error: You cannot delete a post with comments'
     end
-   
   end
 
   private
