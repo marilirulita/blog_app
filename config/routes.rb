@@ -8,9 +8,10 @@ Rails.application.routes.draw do
   end
 
   namespace :api do
-    resources :users, only: [:index, :show] do
-      resources :posts, only: [:index, :show, :new] 
-      resources :comments, only: [:index, :create]
+    resources :users do
+      resources :posts do
+        resources :comments
+      end
     end
   end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

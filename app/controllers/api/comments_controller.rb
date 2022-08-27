@@ -1,4 +1,10 @@
 class Api::CommentsController < ApplicationController
+  def index
+    @post = Post.find(params[:post_id])
+    @comments = @post.comments.order(created_at: :desc)
+    render json: @comments
+  end
+
   def create
     @current_user = current_user
     @comment = @current_user.comments.new(comment_params)
