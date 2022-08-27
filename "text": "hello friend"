@@ -1,0 +1,9 @@
+HTTP/1.1 302 Found
+Location: http://localhost:3000/users/sign_in
+Content-Type: text/html; charset=utf-8
+Cache-Control: no-cache
+X-Request-Id: 70776247-7af4-49d7-a860-f87db02fa7ee
+X-Runtime: 0.017315
+Server-Timing: start_processing.action_controller;dur=0.47998046875, process_action.action_controller;dur=2.56298828125
+Transfer-Encoding: chunked
+
