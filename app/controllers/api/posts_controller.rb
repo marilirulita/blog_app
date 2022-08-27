@@ -10,4 +10,4 @@ class Api::PostsController < ApplicationController
     @post = @user.posts.find(params[:id])
     render json: @post
   end
-end 
+end

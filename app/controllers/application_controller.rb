@@ -24,5 +24,4 @@ class ApplicationController < ActionController::Base
     user = User.find_by_api_token(params[:api_token])
     sign_in(user)
   end
-  
 end

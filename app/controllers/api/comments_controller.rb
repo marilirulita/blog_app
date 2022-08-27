@@ -16,5 +16,4 @@ class Api::CommentsController < ApplicationController
       render json: @comment.errors, status: :unprocessable_entity
     end
   end
-
 end

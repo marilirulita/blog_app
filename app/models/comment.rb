@@ -17,8 +17,7 @@ class Comment < ApplicationRecord
     end
   end
 
-  def as_json(options={})
-    super(:only => [:text])
+  def as_json(_options = {})
+    super(only: [:text])
   end
-
 end
