@@ -2,6 +2,11 @@ class Api::PostsController < ApplicationController
   def index
     @user = User.find(params[:user_id])
     @posts = @user.posts.order(created_at: :desc)
-    render json: { posts: }, status: :ok
+    render json: @posts
+  end
+
+  def show
+    @post = Post.find(params[:id])
+    render json: @post
   end
 end 

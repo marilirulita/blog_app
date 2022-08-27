@@ -1,4 +1,4 @@
-class CommentsController < ApplicationController
+class Api::CommentsController < ApplicationController
   def create
     @current_user = current_user
     @comment = @current_user.comments.new(comment_params)
@@ -9,5 +9,9 @@ class CommentsController < ApplicationController
     else
       flash.now[:error] = 'Error: Comment could not be saved'
     end
+  end
+
+  def comment_params
+    params.require(:comment).permit(:text, :post_id, :author_id)
   end
 end
