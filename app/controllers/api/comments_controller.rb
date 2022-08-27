@@ -4,10 +4,9 @@ class Api::CommentsController < ApplicationController
     @comment = @current_user.comments.new(comment_params)
 
     if @comment.save
-      flash[:success] = 'Comment saved successfully'
-      redirect_to user_post_path(@comment.author_id, @comment.post_id)
+      render json: @comment, status: :created, location: @comment
     else
-      flash.now[:error] = 'Error: Comment could not be saved'
+      render json: @comment.errors, status: :unprocessable_entity
     end
   end
 
