@@ -13,6 +13,8 @@ class User < ApplicationRecord
   validates :posts_counter, comparison: { greater_than_or_equal_to: 0 }
   validates :role, presence: true
 
+  after_create :generate_api_token
+
   # A method that returns the 3 most recent posts for a given user.
   def recent_posts
     posts.limit(3).order(created_at: :desc)
@@ -22,5 +24,12 @@ class User < ApplicationRecord
 
   def is?(requested_role)
     role == requested_role.to_s
+  end
+
+  private
+
+  def generate_api_token
+    self.api_token = Devise.friendly_token
+    save
   end
 end

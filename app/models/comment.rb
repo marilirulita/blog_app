@@ -16,4 +16,8 @@ class Comment < ApplicationRecord
       post.increment!(:comments_counter)
     end
   end
+
+  def as_json(_options = {})
+    super(only: [:text])
+  end
 end

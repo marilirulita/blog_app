@@ -11,16 +11,18 @@
   </head>
 
   <body>
-   
-    <% flash.each do |name, msg| -%>
-      <%= content_tag :div, msg, class: name %>
-    <% end -%>
+  <div class='content'>
+  <header>
+      <% if user_signed_in? %>
+        <h3>Hello <strong><%= current_user.name.capitalize %></strong></h3>
+        <h4><%= link_to "GET YOUR API TOKEN", api_token_user_path(current_user.id) %> </h4>
+      <% end %>
+      <div class="notice"><%= notice %></div>
+      <div class="alert"><%= alert %></div>
+    </header>
 
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-     
-    <div class='content'>
     <%= yield %>
+
     </div>
   </body>
 </html>
