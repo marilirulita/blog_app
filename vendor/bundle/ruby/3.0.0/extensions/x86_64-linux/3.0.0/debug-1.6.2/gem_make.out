@@ -1,0 +1,16 @@
+current directory: /home/marb/programming/blog_app/vendor/bundle/ruby/3.0.0/gems/debug-1.6.2/ext/debug
+/usr/bin/ruby3.0 -I /usr/lib/ruby/vendor_ruby -r ./siteconf20230413-8132-4qkadk.rb extconf.rb
+creating Makefile
+
+current directory: /home/marb/programming/blog_app/vendor/bundle/ruby/3.0.0/gems/debug-1.6.2/ext/debug
+make DESTDIR\= clean
+
+current directory: /home/marb/programming/blog_app/vendor/bundle/ruby/3.0.0/gems/debug-1.6.2/ext/debug
+make DESTDIR\=
+compiling debug.c
+compiling iseq_collector.c
+linking shared-object debug/debug.so
+
+current directory: /home/marb/programming/blog_app/vendor/bundle/ruby/3.0.0/gems/debug-1.6.2/ext/debug
+make DESTDIR\= install
+/usr/bin/install -c -m 0755 debug.so ./.gem.20230413-8132-c599ag/debug
